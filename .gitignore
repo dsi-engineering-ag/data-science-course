@@ -1,0 +1,8 @@
+.local
+.ipynb_checkpoints
+.ipython
+.cache
+.keras
+.DS_Store
+.bash_history
+.jupyter
