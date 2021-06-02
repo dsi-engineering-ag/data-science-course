@@ -1,0 +1,14 @@
+﻿Catalogue_id,de,fr,it,en
+plantcat_1,Abwasserkraftwerk,Centrale sur les eaux usées,Centrale ad acqua di scarico,Wastewater power plant
+plantcat_2,Ausleitkraftwerk,Centrale de dérivation,Centrale a derivazione,Diversion power plant
+plantcat_3,Dotierwasserkraftwerk,Centrale de dotation,Centrale ad acqua di dotazione,Weir plant
+plantcat_4,Durchlaufkraftwerk,Centrale au fil de l’eau,Centrale ad acque di deflusso,Continuous power plant
+plantcat_5,Trinkwasserkraftwerk,Centrale sur l’eau potable,Centrale ad acqua potabile,Drinking water power plant
+plantcat_6,Pumpspeicherkraftwerk,Centrale de pompage-turbinage,Centrale di pompaggio-turbinaggio,Pumped storage power plant
+plantcat_7,Speicherkraftwerk,Centrale à accumulation,Centrale ad accumulazione,Storage power plant
+plantcat_8,Angebaut,Ajoutée,Annesso,Attached
+plantcat_9,Integriert,Intégrée,Integrato,Integrated
+plantcat_10,Freistehend,Isolée,Isolato,Freestanding
+plantcat_11,Biomassenutzung,Utilisation de biomasse,Utilisation de biomasse,Biomass usage
+plantcat_12,Kehrichtverbrennung,Incinération des ordures ménagères,Incenerimento dei rifiuti,Waste incineration
+plantcat_13,Abwasserreinigung,Épuration des eaux,Depurazione delle acque di scarico,Wastewater treatment
