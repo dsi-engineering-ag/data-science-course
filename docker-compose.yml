@@ -1,0 +1,8 @@
+version: "3.9"
+services:
+  jupyter:
+    build: ./support
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./:/home/jovyan/work:z
