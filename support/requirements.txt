@@ -1,3 +1,5 @@
+ipyleaflet
+geopandas
 matplotlib
 numpy
 pandas
