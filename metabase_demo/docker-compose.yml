@@ -1,0 +1,63 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: metabase_demo_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-energy_db}
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-energy_db}"]
+      interval: 3s
+      timeout: 5s
+      retries: 10
+
+  metabase:
+    image: metabase/metabase:latest
+    container_name: metabase_demo_app
+    restart: unless-stopped
+    environment:
+      MB_DB_FILE: /metabase-data/metabase.db
+      JAVA_TOOL_OPTIONS: "-Xmx1024m"
+    ports:
+      - "${METABASE_PORT:-3000}:3000"
+    volumes:
+      - metabase_data:/metabase-data
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  init-pipeline:
+    build:
+      context: ./init
+      dockerfile: Dockerfile
+    container_name: metabase_demo_init
+    restart: "no"
+    environment:
+      PG_HOST: postgres
+      PG_PORT: 5432
+      PG_DB: ${POSTGRES_DB:-energy_db}
+      PG_USER: ${POSTGRES_USER:-postgres}
+      PG_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      METABASE_URL: http://metabase:3000
+      ADMIN_FIRST_NAME: ${ADMIN_FIRST_NAME:-Course}
+      ADMIN_LAST_NAME: ${ADMIN_LAST_NAME:-Admin}
+      ADMIN_EMAIL: ${ADMIN_EMAIL:-admin@course.local}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-Password123!}
+      DATA_DIR: /data/ch.bfe.elektrizitaetsproduktionsanlagen
+    volumes:
+      - ../data:/data:ro
+    depends_on:
+      postgres:
+        condition: service_healthy
+      metabase:
+        condition: service_started
+
+volumes:
+  pgdata:
+  metabase_data:
