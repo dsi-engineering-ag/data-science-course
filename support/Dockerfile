@@ -1,4 +1,4 @@
-FROM jupyter/scipy-notebook
+FROM quay.io/jupyter/scipy-notebook
 
 # RUN apt-get update && apt-get install graphwiz
 COPY requirements.txt .
