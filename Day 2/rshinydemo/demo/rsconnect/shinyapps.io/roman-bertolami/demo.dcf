@@ -1,0 +1,11 @@
+name: demo
+title: demo
+username:
+account: roman-bertolami
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 4089545
+bundleId: 11196479
+url: https://roman-bertolami.shinyapps.io/demo/
+asMultiple: FALSE
+asStatic: FALSE

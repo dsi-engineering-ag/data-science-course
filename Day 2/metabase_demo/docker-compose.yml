@@ -51,7 +51,7 @@ services:
       ADMIN_PASSWORD: ${ADMIN_PASSWORD:-Password123!}
       DATA_DIR: /data/ch.bfe.elektrizitaetsproduktionsanlagen
     volumes:
-      - ../data:/data:ro
+      - ../../data:/data:ro
     depends_on:
       postgres:
         condition: service_healthy
