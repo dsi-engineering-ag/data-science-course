@@ -1,4 +1,6 @@
 .local
+.config
+.npm
 .ipynb_checkpoints
 .ipython
 .cache
@@ -7,3 +9,4 @@
 .bash_history
 .jupyter
 __pycache__
+**/opencode_demo/data/

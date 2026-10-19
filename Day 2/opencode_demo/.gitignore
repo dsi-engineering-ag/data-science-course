@@ -1,0 +1,26 @@
+# OpenCode runtime state and cache
+.local/
+.config/
+.npm/
+
+# Dataset directory (created/populated via init.sh)
+data/
+
+# Python bytecode and virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+
+# Operating system artifacts
+.DS_Store
+Thumbs.db
+
+# Secrets, keys, and credentials
+*-key.json
+*credentials*.json
+service.json
+.env
+.env.*

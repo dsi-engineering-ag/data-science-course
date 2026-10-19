@@ -1,0 +1,27 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "default_agent": "data-analyst",
+  "model": "google-vertex/gemini-3.7-flash",
+  "providers": {
+    "google-vertex": {
+      "settings": {
+        "location": "global"
+      }
+    }
+  },
+  "instructions": [
+    "README.md"
+  ],
+  "permissions": [
+    {
+      "action": "read",
+      "resource": "**",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "python* *",
+      "effect": "allow"
+    }
+  ]
+}
