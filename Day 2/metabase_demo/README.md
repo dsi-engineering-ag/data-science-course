@@ -144,7 +144,11 @@ ORDER BY 1 ASC;
 
 ## 🛠️ Configuration & Customization
 
-You can customize port bindings and admin credentials in `.env`:
+You can customize port bindings and admin credentials by copying `.env.example` to `.env`:
+
+```bash
+cp .env.example .env
+```
 
 ```bash
 # metabase_demo/.env
